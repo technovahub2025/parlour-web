@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumière | Automated Luxury Beauty</title>
+    <meta name="description" content="Experience the pinnacle of beauty and relaxation at Lumière Parlour.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@200;300;400;500&family=Playfair+Display:ital,wght@1,400;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="loading">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader-content">
+            <span class="loader-text">LUMIÈRE</span>
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <nav class="navbar">
+        <div class="logo">LUMIÈRE</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#experience">The Experience</a>
+            <a href="#contact">Book Now</a>
+        </div>
+        <button class="menu-btn" aria-label="Menu">
+            <i data-lucide="menu"></i>
+        </button>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-bg">
+            <img src="./hero.png" alt="Luxury Salon Interior">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="subtitle fade-in">Une Expérience Unique</span>
+            <h1 class="fade-in-up">The Art of <br> <em>Timeless Beauty</em></h1>
+            <p class="fade-in-up-delay">A sanctuary where precision meets luxury. Elevating your essence.</p>
+            <div class="cta-wrapper fade-in-up-more">
+                <a href="#booking" class="magnetic-btn"><span class="btn-text">Reserve Your Spot</span></a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="line"></div>
+        </div>
+    </header>
+
+    <section id="services" class="services-list-section">
+        <div class="service-bg-container">
+            <!-- Dynamic background images will appear here on hover -->
+            <div class="service-bg active" style="background-image: url('./hero.png')"></div> <!-- Default -->
+            <div class="service-bg" data-bg="hair" style="background-image: url('./hair.png')"></div>
+            <div class="service-bg" data-bg="facial" style="background-image: url('./facial.png')"></div>
+            <div class="service-bg" data-bg="spa" style="background-image: url('./spa.png')"></div>
+            <div class="service-bg" data-bg="makeup" style="background-image: url('./makeup.png')"></div>
+        </div>
+
+        <div class="services-content">
+            <div class="section-label">Our Service Collection</div>
+            <ul class="service-list">
+                <li class="service-item reveal" data-target="hair">
+                    <span class="service-num">01</span>
+                    <a href="#" class="service-link">
+                        <span class="service-name">Couture Styling</span>
+                        <span class="service-arrow"><i data-lucide="arrow-right"></i></span>
+                    </a>
+                </li>
+                <li class="service-item reveal" data-target="facial">
+                    <span class="service-num">02</span>
+                    <a href="#" class="service-link">
+                        <span class="service-name">Radiance Facials</span>
+                        <span class="service-arrow"><i data-lucide="arrow-right"></i></span>
+                    </a>
+                </li>
+                <li class="service-item reveal" data-target="spa">
+                    <span class="service-num">03</span>
+                    <a href="#" class="service-link">
+                        <span class="service-name">Holistic Spa</span>
+                        <span class="service-arrow"><i data-lucide="arrow-right"></i></span>
+                    </a>
+                </li>
+                <li class="service-item reveal" data-target="makeup">
+                    <span class="service-num">04</span>
+                    <a href="#" class="service-link">
+                        <span class="service-name">Bridal Artistry</span>
+                        <span class="service-arrow"><i data-lucide="arrow-right"></i></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="experience" class="experience-editorial">
+        <div class="editorial-content reveal">
+            <span class="editorial-subtitle">The Philosophy</span>
+            <h2>We believe beauty is an architectural feat.</h2>
+            <p>Every cut, every contour, every treatment is designed with the precision of high art. Step into a space
+                where time slows down, and the focus is entirely on your restoration.</p>
+        </div>
+        <div class="editorial-image reveal-right">
+            <img src="./hero.png" alt="Interior Detail" class="parallax-el"> <!-- Reuse hero for now, cropped -->
+        </div>
+    </section>
+
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <span>Elegance</span> <span class="separator">✦</span>
+            <span>Sophistication</span> <span class="separator">✦</span>
+            <span>Radiance</span> <span class="separator">✦</span>
+            <span>Lumière</span> <span class="separator">✦</span>
+            <span>Elegance</span> <span class="separator">✦</span>
+            <span>Sophistication</span> <span class="separator">✦</span>
+            <span>Radiance</span> <span class="separator">✦</span>
+            <span>Lumière</span> <span class="separator">✦</span>
+        </div>
+    </div>
+
+    <section id="contact" class="booking-minimal">
+        <div class="booking-wrapper reveal">
+            <h2>Begin Your <br><em>Transformation</em></h2>
+            <form class="booking-form-minimal">
+                <div class="form-row">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-row">
+                    <select class="minimal-select">
+                        <option value="" disabled selected>Select Service</option>
+                        <option value="hair">Hair Styling</option>
+                        <option value="facial">Facial Treatment</option>
+                        <option value="spa">Full Body Spa</option>
+                        <option value="makeup">Bridal Artistry</option>
+                    </select>
+                    <input type="text" placeholder="Preferred Date" onfocus="(this.type='date')"
+                        onblur="(this.type='text')">
+                </div>
+                <button type="submit" class="magnetic-btn-submit">Request Appointment</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col brand-col">
+                <h3 class="footer-logo">LUMIÈRE</h3>
+            </div>
+            <div class="footer-col">
+                <h4>Address</h4>
+                <p>123 Luxury Avenue<br>Fashion District<br>New York, NY 10001</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>+1 (212) 555-0199<br>concierge@lumiere.com</p>
+            </div>
+            <div class="footer-col social-col">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+            </div>
+        </div>
+        <div class="footer-bar">
+            <p>&copy; 2026 Lumière Parlour.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
