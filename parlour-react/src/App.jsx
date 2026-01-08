@@ -14,6 +14,7 @@ function App() {
   const marqueeRef = useRef(null);
 
   // Initialize Lenis and Global Animations
+  // Initialize Lenis and Global Animations
   useEffect(() => {
     // Lenis
     const lenis = new Lenis({
@@ -23,11 +24,15 @@ function App() {
       smooth: true,
     });
 
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
+    // Sync with GSAP
+    lenis.on('scroll', ScrollTrigger.update);
+
+    const tickerFn = (time) => {
+      lenis.raf(time * 1000);
+    };
+
+    gsap.ticker.add(tickerFn);
+    gsap.ticker.lagSmoothing(0);
 
     // GSAP Context
     const ctx = gsap.context(() => {
@@ -155,6 +160,7 @@ function App() {
     document.body.classList.add('loaded');
 
     return () => {
+      gsap.ticker.remove(tickerFn);
       ctx.revert(); // Auto cleanups all GSAP animations created in context
       lenis.destroy();
     };
