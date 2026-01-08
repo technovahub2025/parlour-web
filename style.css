@@ -57,6 +57,33 @@ body.no-scroll {
     z-index: 9998;
     opacity: 0.05;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    animation: noiseAnim 0.5s steps(5) infinite;
+}
+
+@keyframes noiseAnim {
+    0% {
+        background-position: 0 0;
+    }
+
+    20% {
+        background-position: 20% 20%;
+    }
+
+    40% {
+        background-position: -20% -20%;
+    }
+
+    60% {
+        background-position: 20% -20%;
+    }
+
+    80% {
+        background-position: -20% 20%;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
 }
 
 /* Preloader */
@@ -645,12 +672,34 @@ footer {
 
 .fade-in-up-delay {
     opacity: 0;
-    animation: fadeUp 1s forwards 1.2s;
+    /* animation: fadeUp 1s forwards 1.2s; Handled by GSAP now */
 }
 
 .fade-in-up-more {
     opacity: 0;
-    animation: fadeUp 1s forwards 1.4s;
+    /* animation: fadeUp 1s forwards 1.4s; Handled by GSAP now */
+}
+
+.nav-scrolled {
+    padding: 1rem 4rem !important;
+    background: rgba(5, 5, 5, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* GSAP Utilities */
+.reveal-text {
+    overflow: hidden;
+    position: relative;
+}
+
+.reveal-text span,
+.reveal-text h1,
+.reveal-text h2,
+.reveal-text p {
+    transform: translateY(100%);
+    opacity: 0;
+    display: block;
 }
 
 /* Responsive */
