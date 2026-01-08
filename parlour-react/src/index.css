@@ -25,10 +25,25 @@
   cursor: none;
 }
 
-html {
-  font-size: 16px;
-  scroll-behavior: auto;
-  /* Let Lenis handle it */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
 
 body {
@@ -52,40 +67,61 @@ body.no-scroll {
 /* Noise Overlay */
 .noise-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
   pointer-events: none;
   z-index: 9998;
   opacity: 0.05;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  animation: noiseAnim 0.5s steps(5) infinite;
+  animation: noiseAnim 0.2s infinite;
+  will-change: transform;
 }
 
 @keyframes noiseAnim {
   0% {
-    background-position: 0 0;
+    transform: translate(0, 0);
+  }
+
+  10% {
+    transform: translate(-5%, -5%);
   }
 
   20% {
-    background-position: 20% 20%;
+    transform: translate(-10%, 5%);
+  }
+
+  30% {
+    transform: translate(5%, -10%);
   }
 
   40% {
-    background-position: -20% -20%;
+    transform: translate(-5%, 15%);
+  }
+
+  50% {
+    transform: translate(-10%, 5%);
   }
 
   60% {
-    background-position: 20% -20%;
+    transform: translate(15%, 0);
+  }
+
+  70% {
+    transform: translate(0, 10%);
   }
 
   80% {
-    background-position: -20% 20%;
+    transform: translate(-15%, 0%);
+  }
+
+  90% {
+    transform: translate(10%, 5%);
   }
 
   100% {
-    background-position: 0 0;
+    transform: translate(5%, 0);
   }
 }
 
