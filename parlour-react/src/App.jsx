@@ -90,22 +90,7 @@ function App() {
           ease: "linear"
         }).totalProgress(0.5);
 
-        let scrollTimeout; // Helper for marquee closure
-        ScrollTrigger.create({
-          trigger: "body",
-          onUpdate: (self) => {
-            const velocity = self.getVelocity();
-            gsap.to(marqueeRef.current, {
-              skewX: velocity / 300,
-              overwrite: 'auto',
-              duration: 0.2
-            });
-            clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(() => {
-              gsap.to(marqueeRef.current, { skewX: 0, duration: 0.5 });
-            }, 100);
-          }
-        });
+
       }
 
       // Editorial Parallax
